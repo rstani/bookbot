@@ -20,7 +20,13 @@ def count_characters(book):
             character_count[c] = 1
         else:
             character_count[c] += 1
-    return character_count
+    character_count_sorted = {
+        k: v
+        for k, v in sorted(
+            character_count.items(), key=lambda item: item[1], reverse=True
+        )
+    }
+    return character_count_sorted
 
 
 def main():
